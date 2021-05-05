@@ -33,6 +33,7 @@
     # câu lệnh sed -i 's/OPENCV=0/OPENCV=1/' Makfile để thay OPENCV=0 thành OPENCV=1 trong Makefile (sed - stream editing, -i thực hiện trên original file luôn)
     ```
 - **Bước 4**: Configue .cfg file (nằm trong dark/cfg). Trong này có sẵn cả yolov3.cfg và yolo3-tiny.cfg (nhanh hơn nhưng accuracy thấp hơn, tùy mục đích sử dụng)
+
     4.1a. Đối với `yolo3-tiny.cfg`
         * Tạo một bản copy của `yolo3-tiny.cfg` (good practice)
         ```python
@@ -44,6 +45,7 @@
             - Thay đổi dòng max_batches thành `classes*2000`, nếu 1 class thì `max_batches=2000`, nếu 2 classes thì `max_batches=4000`, nếu 3 classes thì `max_batches=6000`
             - Dòng `L127 và L171` thay đổi filters=255 thành filters=(classes + 5)*3. Nếu classes=1 thì filters=18, classes=2 thì filters=21, classes=3 thì filters=24
             - Dòng `L135 và L177` thay đổi classes=80 thành classes=no. of objects. Nếu no. of objects=1 thì classes=1, no. of objects=2 thì classes=2, no. of objects=3 thì classes=3
+
     4.1b. Đối với `yolov3.cfg`
         * Tạo một bản copy của `yolov3.cfg`
         ```python
@@ -66,6 +68,7 @@
         !sed -i '689 s@filters=255@filters=24@' cfg/yolov3_training.cfg
         !sed -i '776 s@filters=255@filters=24@' cfg/yolov3_training.cfg
         ```
+        
     4.1c. Checking
         * Vào các file vừa tạo ra nhấn `Ctrl + F` và nhập `[yolo]`
             - Đối với yolov3-tiny.cfg cần `2` chỗ khớp
@@ -95,7 +98,7 @@
     ```python
     !unzip /mydrive/yolov3/images.zip -d data/obj
     ```
-- **BƯớc 8**: Tạo file `train.txt`
+- **Bước 8**: Tạo file `train.txt`
     * Tạo file `train.txt` trong thư mục `darknet/data`
         - Mỗi file được lưu ở 1 dòng
         - Đường dẫn đến file là relative so với thư mục `darknet`
