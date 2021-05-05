@@ -108,10 +108,14 @@
     with open("data/train.txt", "w") as f:
     f.write("\n".join(images_list))
     ```
-
+- **Bước 9**: Download pre-trained weights
+    * Đối với `yolo3` tải pre-trained weights rồi lưu vào thư mục `darknet`
+    ```python
+    !wget https://pjreddie.com/media/files/darknet53.conv.74    
+    ```
 ### Tài liệu tham khảo
 https://www.youtube.com/watch?v=DLngCtsG3bk
 
 https://github.com/emasterclassacademy/Single-Multiple-Custom-Object-Detection
 
-https://github.com/AlexeyAB/darknet#how-to-train-to-detect-your-custom-objects
+https://github.com/AlexeyAB/darknet #how-to-train-to-detect-your-custom-objects
