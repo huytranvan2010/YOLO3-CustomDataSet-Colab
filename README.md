@@ -110,3 +110,8 @@
     ```
 
 ### Tài liệu tham khảo
+https://www.youtube.com/watch?v=DLngCtsG3bk
+
+https://github.com/emasterclassacademy/Single-Multiple-Custom-Object-Detection
+
+https://github.com/AlexeyAB/darknet#how-to-train-to-detect-your-custom-objects
