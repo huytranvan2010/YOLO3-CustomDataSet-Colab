@@ -35,11 +35,11 @@
 - **Bước 4**: Configue .cfg file (nằm trong dark/cfg). Trong này có sẵn cả yolov3.cfg và yolo3-tiny.cfg (nhanh hơn nhưng accuracy thấp hơn, tùy mục đích sử dụng)
 
     - **4.1a.** Đối với `yolo3-tiny.cfg`
-        * Tạo một bản copy của `yolo3-tiny.cfg` (good practice)
+        - Tạo một bản copy của `yolo3-tiny.cfg` (good practice)
         ```python
         !cp cfg/yolo3-tiny.cfg cfg/yolov3-tiny_training.cfg
         ```
-        * Thay đổi một số dòng trong `yolov3-tiny_training.cfg`
+        - Thay đổi một số dòng trong `yolov3-tiny_training.cfg`
             - Thay đổi dòng batch thành `batch=64`
             - Thay đổi dòng subdivisions thành `subdivisions=16`
             - Thay đổi dòng max_batches thành `classes*2000`, nếu 1 class thì `max_batches=2000`, nếu 2 classes thì `max_batches=4000`, nếu 3 classes thì `max_batches=6000`
@@ -51,7 +51,7 @@
         ```python
         !cp cfg/yolo3-tiny.cfg cfg/yolov3_training.cfg
         ```
-        * Thay đổi một số dòng trong `yolov3_training.cfg`
+        - Thay đổi một số dòng trong `yolov3_training.cfg`
             - Thay đổi dòng batch thành `batch=64`
             - Thay đổi dòng subdivisions thành `subdivisions=16`
             - Thay đổi dòng max_batches thành `classes*2000`, nếu 1 class thì `max_batches=2000`, nếu 2 classes thì `max_batches=4000`, nếu 3 classes thì `max_batches=6000`
@@ -70,7 +70,7 @@
         ```
 
     - **4.1c.** Checking
-        * Vào các file vừa tạo ra nhấn `Ctrl + F` và nhập `[yolo]`
+        - Vào các file vừa tạo ra nhấn `Ctrl + F` và nhập `[yolo]`
             - Đối với yolov3-tiny.cfg cần `2` chỗ khớp
             - Đối với yolov3.cfg cần `3` chỗ khớp
             - Kiểm tra `filters` trước `[yolo]` và `classes` phía sau `[yolo]`
