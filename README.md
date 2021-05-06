@@ -113,6 +113,33 @@
     ```python
     !wget https://pjreddie.com/media/files/darknet53.conv.74    
     ```
+    Đây chính là pre-trained weights của Darknet với 53 convolutional layers.
+    * Đối với `yoyo-tiny` có thể làm theo hướng dẫn sau [Guide](https://github.com/AlexeyAB/darknet)
+- **Bước 10**: Bắt đầu training
+    * Đối với `yolo3` có thể thực hiện bằng câu lệnh
+    ```python
+    !./darknet detector train data/obj.data cfg/yolov3_training.cfg darknet53.conv.74
+    ```
+    Có 3 tham số cần truyền vào đó là: 
+        - `data/obj.data` - xác định training informations như số lượng classes, vị trí...
+        - `cfg/yolov3_training.cfg` - configuration file xác định cấu hình của mạng
+        - `darknet53.conv.74` - pre-trained weights
+    Trong quá trình training có thể mất kết nối với Colab do đó để tiết kiệm thời gian và không phải training lại từ đầu ở câu lệnh trên sẽ thay `darknet53.conv.74` thành `/mydrive/yolov3/yolov3_training_last.weights`, đây chính là weights thu được trong quá trình training.
+    * Đối với `yolov3-tiny` làm theo hướng dẫn tại [Guide for training yolov3-tiny](https://github.com/AlexeyAB/darknet). Để ý thay đổi configuration file và pre-trained weights.
+
+Tổng kết lại quá trình training:
+```python
+!./darknet detector train data/obj.data cfg/yolov3_training.cfg darknet53.conv.74
+```
+1. `!./darknet detector train` thực hiện trong bước 3: Clone, configure, compile Darknet
+2. `data/obj.data` 
+    - Bước 5: tạo file `.names` và `.data`
+    - Bước 7: tạo images folder và upload lên Google Drive, kết nối với Colab
+    - Bước 8: tạo file `train.txt`
+3. `cfg/yolov3_training.cfg` 
+    - Bước 4: cấu hình file `.cfg`
+4. `darknet53.conv.74`
+    - Bước 9: tải pre-trained weights
 ### Tài liệu tham khảo
 https://www.youtube.com/watch?v=DLngCtsG3bk
 
