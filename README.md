@@ -127,11 +127,12 @@
     Trong quá trình training có thể mất kết nối với Colab do đó để tiết kiệm thời gian và không phải training lại từ đầu ở câu lệnh trên sẽ thay `darknet53.conv.74` thành `/mydrive/yolov3/yolov3_training_last.weights`, đây chính là weights thu được trong quá trình training.
     * Đối với `yolov3-tiny` làm theo hướng dẫn tại [Guide for training yolov3-tiny](https://github.com/AlexeyAB/darknet). Để ý thay đổi configuration file và pre-trained weights.
 
-Tổng kết lại quá trình training:
+### Tổng kết lại quá trình training
 ```python
 !./darknet detector train data/obj.data cfg/yolov3_training.cfg darknet53.conv.74
 ```
-1. `!./darknet detector train` thực hiện trong bước 3: Clone, configure, compile Darknet
+1. `!./darknet detector train` 
+    - Bước 3: Clone, configure, compile Darknet
 2. `data/obj.data` 
     - Bước 5: tạo file `.names` và `.data`
     - Bước 7: tạo images folder và upload lên Google Drive, kết nối với Colab
